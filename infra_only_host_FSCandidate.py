@@ -75,6 +75,9 @@ def computeHost(host):
         lock.acquire()
         logger.debug("Host name = "+hostname)
         logger.debug("Host entityId = "+hostid)
+        if osType == None:
+            osType = 'None'
+            logger.debug('osType == None for host (it is normally a monitoring candidate) '+hostname+', hostid = '+hostid)
         logger.debug("Host osType = "+osType)
         if monitoringMode != None:
             if monitoringMode == 'INFRASTRUCTURE':
